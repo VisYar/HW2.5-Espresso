@@ -13,7 +13,11 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+
+@RunWith(AllureAndroidJUnit4.class)
 public class MainActivityTest {
     private ViewInteraction mainText = onView(withId(R.id.text_home));
     private ViewInteraction appCompatImageButton = onView(withContentDescription("Open navigation drawer"));
