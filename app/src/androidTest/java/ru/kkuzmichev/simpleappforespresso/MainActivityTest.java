@@ -26,6 +26,9 @@ public class MainActivityTest {
     private ViewInteraction checkedTextSlideshow = onView(withId(R.id.nav_slideshow));
     private ViewInteraction textView = onView(withId(R.id.text_slideshow));
 
+    String HomeFragment = "This is home fragment";
+    String SlideshowFragment = "This is slideshow fragment";
+
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
@@ -33,7 +36,7 @@ public class MainActivityTest {
     @Test
     public void mainActivityTest() {
         mainText.check(matches(isDisplayed()));
-        mainText.check(matches(withText("This is home fragment")));
+        mainText.check(matches(withText(HomeFragment)));
     }
 
     @Test
@@ -52,6 +55,6 @@ public class MainActivityTest {
         checkedTextSlideshow.check(matches(isDisplayed()));
         checkedTextSlideshow.perform(click());
         textView.check(matches(isDisplayed()));
-        textView.check(matches(withText("This is slideshow fragment")));
+        textView.check(matches(withText(SlideshowFragment)));
     }
 }
